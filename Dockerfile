@@ -10,7 +10,7 @@ EXPOSE 8080
 ENV JAVA_VERSON 1.8.0
 ENV MAVEN_VERSION 3.3.9
 
-LABEL io.k8s.description="Platform for building and running Spring Boot applications" \
+LABEL io.k8s.description="Platform for building and running Spring Boot applications 2" \
       io.k8s.display-name="Spring Boot Maven 3" \
       io.openshift.expose-services="8080:http" \
       io.openshift.tags="builder,java,java8,maven,maven3,springboot"
