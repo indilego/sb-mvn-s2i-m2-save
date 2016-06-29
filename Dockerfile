@@ -38,4 +38,4 @@ RUN pwd
 RUN export
 
 # Set the default CMD to print the usage of the language image
-CMD $STI_SCRIPTS_PATH/usage
+CMD $STI_SCRIPTS_PATH/usage 
