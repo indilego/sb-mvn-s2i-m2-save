@@ -1,13 +1,14 @@
 #!/bin/sh -e
 
-pushd ${HOME} >/dev/null
+echo "Hola"
+#Spushd ${HOME} >/dev/null
 
 # ${HOME}/.m2 is the maven repo dir
 # {$HOME}/target is the class files from the previous build
-if [ -d ./target ]; then
-    tar cf - ./.m2 ./target
-else
-    tar cf - ./.m2
-fi
+#Sif [ -d ./target ]; then
+#S    tar cf - ./.m2 ./target
+#Selse
+#S    tar cf - ./.m2
+#Sfi
 
-popd >/dev/null
+#Spopd >/dev/null
