@@ -1,14 +1,24 @@
 #!/bin/sh -e
 
-echo "Hola"
-#Spushd ${HOME} >/dev/null
+echo "Empiezo  SAVE 111111111"
+
+pushd ${HOME} >/dev/null
+echo "Empiezo  SAVE 2222222222"
 
 # ${HOME}/.m2 is the maven repo dir
 # {$HOME}/target is the class files from the previous build
-#Sif [ -d ./target ]; then
-#S    tar cf - ./.m2 ./target
-#Selse
-#S    tar cf - ./.m2
-#Sfi
+if [ -d ./target ]; then
+    echo "Empiezo  SAVE 3333333333"
 
-#Spopd >/dev/null
+    tar cf - ./.m2 ./target
+    echo "Empiezo  SAVE 44444444444"
+
+else
+    echo "Empiezo  SAVE 55555555555"
+
+    tar cf - ./.m2
+    echo "Empiezo  SAVE 666666666666"
+
+fi
+
+popd >/dev/null
