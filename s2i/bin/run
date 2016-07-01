@@ -1,6 +1,7 @@
 #!/bin/bash
-
-#Sset -e
+echo "Empiezo  RUN 111111111"
+set -e
 
 echo "---> Starting Spring Boot application"
-#Sjava -jar `find target -name *.jar`
+java -jar `find target -name *.jar`
+echo "Empiezo  RUN 22222222222"
