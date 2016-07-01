@@ -1,30 +1,35 @@
 #!/bin/bash
- echo "Empiezo 3333333333333333333"
-#Sset -e
-#Secho "Sigo"
+echo "Empiezo 1111111111111111"
+set -e
+echo "Empiezo 2222222222222222"
 # restore maven dependencies downloaded in a previous build,
 # so they do not have to be downloaded again.
 # /opt/s2i/destination/artifacts will only be present in the incremental build scenario
 # in which the target image name is an existing docker image which contains
 # dependencies from a prior build execution.
-#Sfunction restore_saved_artifacts() {
-#S  if [ "$(ls -A /opt/s2i/destination/artifacts/ 2>/dev/null)" ]; then
-#S    echo -n "Restoring saved artifacts from prior build..."
-#S    mv /opt/s2i/destination/artifacts/* /opt/s2i/destination/artifacts/.[!.]* $HOME/.
-#S  fi
-#S}
+function restore_saved_artifacts() {
+ echo "Empiezo 5555555555555555"
+  if [ "$(ls -A /opt/s2i/destination/artifacts/ 2>/dev/null)" ]; then
+  echo "Empiezo 666666666666666"
+    echo -n "Restoring saved artifacts from prior build..."
+    mv /opt/s2i/destination/artifacts/* /opt/s2i/destination/artifacts/.[!.]* $HOME/.
+    echo "Empiezo 77777777777777777"
+  fi
+}
 
 # Source code provided to S2I is at ${HOME}
-#SLOCAL_SOURCE_DIR=${HOME}
-#Smkdir -p $LOCAL_SOURCE_DIR
-
+LOCAL_SOURCE_DIR=${HOME}
+echo "Empiezo 333333333333333"
+mkdir -p $LOCAL_SOURCE_DIR
+echo "Empiezo 444444444444444"
   # restore any maven dependencies which will be present if this is an
   # incremental build
-#S  restore_saved_artifacts
+  restore_saved_artifacts
+echo "Empiezo 88888888888888"
+  pushd $LOCAL_SOURCE_DIR &> /dev/null
+echo "Empiezo 99999999999999"
 
-#S  pushd $LOCAL_SOURCE_DIR &> /dev/null
-
-#S  mvn clean install -DskipTests=true
-
-#S  echo "Copying built war files into $DEPLOY_DIR for later deployment..."
-#S  popd &> /dev/null
+  mvn clean install -DskipTests=true
+echo "Empiezo 10101010101010"
+  echo "Copying built war files into $DEPLOY_DIR for later deployment..."
+  popd &> /dev/null
