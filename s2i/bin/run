@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+#Sset -e
 
-echo "---> Starting Spring Boot application"
-java -jar `find target -name *.jar`
+Secho "---> Starting Spring Boot application"
+#Sjava -jar `find target -name *.jar`
