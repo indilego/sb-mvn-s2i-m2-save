@@ -28,6 +28,12 @@ echo "Empiezo 444444444444444"
 echo "Empiezo 88888888888888"
   pushd $LOCAL_SOURCE_DIR &> /dev/null
 echo "Empiezo 99999999999999"
+pwd
+echo "Empiezo AAAAAAAAAAAAAA"
+ls -ltr
+echo "Empiezo BBBBBBBBBBBBB"
+ls /tmp/src -ltr
+echo "Empiezo CCCCCCCCCCCCC"
 
   mvn clean install -DskipTests=true
 echo "Empiezo 10101010101010"
